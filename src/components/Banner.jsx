@@ -1,5 +1,5 @@
 import React, { useContext, useState, useEffect, lazy, Suspense } from "react";
-import bannerImg from "../public/images/baner.webp";
+import bannerImg from "../public/images/baner.jpg";
 
 const Banner = () => {
   const [open, setOpen] = useState(true);
