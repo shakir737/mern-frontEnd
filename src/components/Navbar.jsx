@@ -67,17 +67,20 @@ const Navbar = () => {
             : ""
         }`}
       >
-        <div className="navbar-start">
-          <Link>
-            <img
-              src={logo}
-              loading="lazy"
-              decoding="async"
-              fetchpriority="high"
-              alt="Foodi"
-              style={{ height: "auto", width: "auto" }}
-            />
-          </Link>
+        <div className="flex flex-between">
+          <div>
+            <Link>
+              <img
+                src={logo}
+                loading="lazy"
+                decoding="async"
+                fetchpriority="high"
+                alt="Foodi"
+                style={{ height: "auto", width: "auto" }}
+              />
+            </Link>
+          </div>
+
           {/* <div className="md:hidden">
             <label tabIndex={0} className="btn btn-ghost lg:hidden"></label>
             <ul
@@ -90,12 +93,10 @@ const Navbar = () => {
         </div>
 
         {/* categories */}
-        <div>
-          <div className=" hidden lg:flex">
-            <NavbarChild />
-          </div>
+        <div className=" hidden md:flex md:flex-between">
+          <NavbarChild />
         </div>
-        <div className="navbar-end flex justify-between ">
+        <div className=" flex justify-between ">
           <button className="btn btn-ghost btn-circle hidden lg:flex">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -135,7 +136,6 @@ const Navbar = () => {
                   />
                 </svg>
                 <span className="absolute mb-8 rounded-full bg-black w-4 h-4  text-white font-mono text-[14px] leading-tight text-center">
-                  {" "}
                   {users && users.getaUser.cart.length}
                 </span>
                 {/* <span className="badge badge-sm indicator-item">{cart.length || 0}</span> */}
