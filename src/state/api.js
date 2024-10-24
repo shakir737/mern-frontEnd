@@ -13,7 +13,7 @@ export const api = createApi({
       }
       return headers;
     },
-    credentials: "include",
+    // credentials: "include",
   }),
   reducerPath: "adminApi",
   tagTypes: [
