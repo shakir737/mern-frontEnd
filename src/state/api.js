@@ -13,7 +13,13 @@ export const api = createApi({
       }
       return headers;
     },
-    // credentials: "include",
+
+    credentials: "include",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+      "Access-Control-Allow-Credentials": true,
+    },
   }),
   reducerPath: "adminApi",
   tagTypes: [
