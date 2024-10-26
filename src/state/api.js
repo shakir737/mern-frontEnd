@@ -2,7 +2,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 export const api = createApi({
   baseQuery: fetchBaseQuery({
-    baseUrl: "https://yxtcbvxrz9.execute-api.us-east-1.amazonaws.com/prod/api/",
+    baseUrl: "https://localhost:4000/api/",
     prepareHeaders: (headers, { getState }) => {
       let user = getState();
       const {
@@ -19,8 +19,7 @@ export const api = createApi({
       Accept: "application/json",
       "Content-Type": "application/json",
       "Access-Control-Allow-Credentials": true,
-      "Access-Control-Allow-Origin":
-        "https://main.d1bygvczrsspbr.amplifyapp.com",
+      "Access-Control-Allow-Origin": "http://localhost:3000",
     },
   }),
   reducerPath: "adminApi",
