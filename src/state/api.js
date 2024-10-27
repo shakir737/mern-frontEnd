@@ -15,14 +15,14 @@ export const api = createApi({
       return headers;
     },
 
-    // credentials: "include",
-    // headers: {
-    //   Accept: "application/json",
-    //   "Content-Type": "application/json",
-    //   "Access-Control-Allow-Credentials": true,
-    //   "Access-Control-Allow-Origin":
-    //     "https://main.d1bygvczrsspbr.amplifyapp.com",
-    // },
+    credentials: "include",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+      "Access-Control-Allow-Credentials": true,
+      "Access-Control-Allow-Origin":
+        "https://main.d1bygvczrsspbr.amplifyapp.com",
+    },
   }),
   reducerPath: "adminApi",
   tagTypes: [
