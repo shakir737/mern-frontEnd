@@ -3,7 +3,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 export const api = createApi({
   baseQuery: fetchBaseQuery({
     baseUrl:
-      "https://hlrkwpw6qi.execute-api.us-east-1.amazonaws.com/ecomerse/api/",
+      "https://dskfra7y6a.execute-api.us-east-1.amazonaws.com/ecomerse/api/",
     prepareHeaders: (headers, { getState }) => {
       let user = getState();
       const {
