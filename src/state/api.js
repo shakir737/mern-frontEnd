@@ -11,6 +11,10 @@ export const api = createApi({
       } = user;
       if (user) {
         headers.set("Authorization", `Bearer ${token}`);
+        headers.set(
+          "Access-Control-Allow-Origin",
+          "https://main.d1bygvczrsspbr.amplifyapp.com"
+        );
       }
       return headers;
     },
