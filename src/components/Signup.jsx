@@ -60,106 +60,108 @@ const Signup = (props) => {
   // login with google
   const handleRegister = () => {};
   return (
-    <div className="max-w-md bg-white border-8 border-[#008000] w-full mx-auto my-20">
-      <div className="mb-5">
-        <div className="flex flex-row justify-end">
-          <button
-            onClick={() => setOpenSignup(false)}
-            className="btn btn-sm btn-circle btn-ghost ml-20"
-          >
-            ✕
-          </button>
+    <div className="drawer fixed w-full h-screen top-0 left-0  flex items-center justify-center">
+      <div className="max-w-md bg-white border-8 border-green w-full mx-auto rounded ">
+        <div className="mb-5">
+          <div className="flex flex-row justify-end">
+            <button
+              onClick={() => setOpenSignup(false)}
+              className="btn btn-sm btn-circle btn-ghost ml-20"
+            >
+              ✕
+            </button>
+          </div>
+          <form className="card-body" onSubmit={handleSubmit(onSubmit)}>
+            <h3 className="font-bold text-lg">Please Create An Account!</h3>
+            {/* name */}
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">firstName</span>
+              </label>
+              <input
+                type="firstname"
+                placeholder="Your firstname"
+                className="input input-bordered"
+                {...register("firstname")}
+              />
+            </div>
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Last Name</span>
+              </label>
+              <input
+                type="lastname"
+                placeholder="Your last name"
+                className="input input-bordered"
+                {...register("lastname")}
+              />
+            </div>
+
+            {/* email */}
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Email</span>
+              </label>
+              <input
+                type="email"
+                placeholder="email"
+                className="input input-bordered"
+                {...register("email")}
+              />
+            </div>
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Phone No</span>
+              </label>
+              <PhoneInputWithCountry
+                name="phoneInputWithCountrySelect"
+                placeholder="Phone no"
+                control={control}
+                className="input input-bordered"
+                // {...register("phone")}
+                rules={{ required: true }}
+              />
+            </div>
+
+            {/* password */}
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Password</span>
+              </label>
+              <input
+                type="password"
+                placeholder="password"
+                className="input input-bordered"
+                {...register("password")}
+              />
+              <label className="label">
+                <a href="#" className="label-text-alt link link-hover mt-2">
+                  Forgot password?
+                </a>
+              </label>
+            </div>
+
+            {/* error message */}
+            <p>{errors.message}</p>
+
+            {/* submit btn */}
+            <div className="form-control mt-6">
+              <input
+                type="submit"
+                className="btn bg-green text-white"
+                value="Sign up"
+              />
+            </div>
+
+            <div
+              className="text-center my-2 cursor-pointer hover:underline"
+              onClick={loginSignupChange}
+            >
+              Have an account? Login
+            </div>
+          </form>
+          <OAuth />
         </div>
-        <form className="card-body" onSubmit={handleSubmit(onSubmit)}>
-          <h3 className="font-bold text-lg">Please Create An Account!</h3>
-          {/* name */}
-          <div className="form-control">
-            <label className="label">
-              <span className="label-text">firstName</span>
-            </label>
-            <input
-              type="firstname"
-              placeholder="Your firstname"
-              className="input input-bordered"
-              {...register("firstname")}
-            />
-          </div>
-          <div className="form-control">
-            <label className="label">
-              <span className="label-text">Last Name</span>
-            </label>
-            <input
-              type="lastname"
-              placeholder="Your last name"
-              className="input input-bordered"
-              {...register("lastname")}
-            />
-          </div>
-
-          {/* email */}
-          <div className="form-control">
-            <label className="label">
-              <span className="label-text">Email</span>
-            </label>
-            <input
-              type="email"
-              placeholder="email"
-              className="input input-bordered"
-              {...register("email")}
-            />
-          </div>
-          <div className="form-control">
-            <label className="label">
-              <span className="label-text">Phone No</span>
-            </label>
-            <PhoneInputWithCountry
-              name="phoneInputWithCountrySelect"
-              placeholder="Phone no"
-              control={control}
-              className="input input-bordered"
-              // {...register("phone")}
-              rules={{ required: true }}
-            />
-          </div>
-
-          {/* password */}
-          <div className="form-control">
-            <label className="label">
-              <span className="label-text">Password</span>
-            </label>
-            <input
-              type="password"
-              placeholder="password"
-              className="input input-bordered"
-              {...register("password")}
-            />
-            <label className="label">
-              <a href="#" className="label-text-alt link link-hover mt-2">
-                Forgot password?
-              </a>
-            </label>
-          </div>
-
-          {/* error message */}
-          <p>{errors.message}</p>
-
-          {/* submit btn */}
-          <div className="form-control mt-6">
-            <input
-              type="submit"
-              className="btn bg-green text-white"
-              value="Sign up"
-            />
-          </div>
-
-          <div
-            className="text-center my-2 cursor-pointer hover:underline"
-            onClick={loginSignupChange}
-          >
-            Have an account? Login
-          </div>
-        </form>
-        <OAuth />
       </div>
     </div>
   );
