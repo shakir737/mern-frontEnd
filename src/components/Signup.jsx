@@ -60,7 +60,7 @@ const Signup = (props) => {
   // login with google
   const handleRegister = () => {};
   return (
-    <div className="drawer fixed w-full h-screen top-0 left-0  flex items-center justify-center">
+    <div className="overflow-y-scroll mt-2 ">
       <div className="max-w-md bg-white border-8 border-green w-full mx-auto rounded ">
         <div className="mb-5">
           <div className="flex flex-row justify-end">
@@ -71,8 +71,10 @@ const Signup = (props) => {
               ✕
             </button>
           </div>
-          <form className="card-body" onSubmit={handleSubmit(onSubmit)}>
-            <h3 className="font-bold text-lg">Please Create An Account!</h3>
+          <form className="" onSubmit={handleSubmit(onSubmit)}>
+            <h3 className="font-bold flex text-lg items-center justify-center">
+              Please Create An Account!
+            </h3>
             {/* name */}
             <div className="form-control">
               <label className="label">

@@ -103,24 +103,21 @@ const Cards = ({ item }) => {
   };
 
   return (
-    <div
-      to={`/?id=${item._id}`}
-      className="card shadow-xl relative mr-5 md:my-5"
-    >
+    <div to={`/?id=${item._id}`} className="card shadow-xl relative">
       <div
-        className={`rating gap-0 absolute right-0 top-0 p-5 w-[60px] heartStar bg-green ${
+        className={`rating gap-0 absolute right-0 top-0 p-3 w-[60px] heartStar bg-green ${
           isHeartFilled ? "text-rose-500" : "text-white"
         }`}
         onClick={handleHeartClick}
       >
-        <FaHeart className="w-5 h-5 cursor-pointer" />
+        <FaHeart className=" h-5 cursor-pointer" />
       </div>
       <Link to={`/?id=${item._id}`}>
-        <div className="h-full w-full">
+        <div className="flex h-[200px] justify-center items-center mt-2 ">
           <img
             src={imageUrl}
             alt="Shoes"
-            className="hover:scale-105 transition-all duration-300 md:h-72"
+            className="hover:scale-105 transition-all duration-300"
           />
         </div>
       </Link>

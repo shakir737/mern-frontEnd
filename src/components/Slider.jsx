@@ -5,8 +5,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 
 import Cards from "../components/Cards";
-import { FaAngleRight, FaAngleLeft  } from "react-icons/fa6";
-
+import { FaAngleRight, FaAngleLeft } from "react-icons/fa6";
 
 const SampleNextArrow = (props) => {
   const { className, style, onClick } = props;
@@ -38,8 +37,6 @@ const ProductSlider = (props) => {
   const { Product } = props;
   const [recipes, setRecipes] = useState([]);
   const slider = React.useRef(null);
-
- 
 
   const settings = {
     dots: true,
@@ -79,26 +76,29 @@ const ProductSlider = (props) => {
     prevArrow: <SamplePrevArrow />,
   };
   return (
-     <div >
-    
-    
+    <div>
       <div className="md:absolute right-3 top-8 mb-10 md:mr-24">
-        <button onClick={() => slider?.current?.slickPrev()}
-        className=" btn p-2 rounded-full ml-5"
+        <button
+          onClick={() => slider?.current?.slickPrev()}
+          className=" btn p-2 rounded-full ml-5"
         >
-         <FaAngleLeft className=" h-8 w-8 p-1"/> 
+          <FaAngleLeft className=" h-8 w-8 p-1" />
         </button>
         <button
           className="bg-green btn p-2 rounded-full ml-5"
           onClick={() => slider?.current?.slickNext()}
         >
-          <FaAngleRight className=" h-8 w-8 p-1"/> 
+          <FaAngleRight className=" h-8 w-8 p-1" />
         </button>
       </div>
 
-      <Slider ref={slider} {...settings} className="overflow-hidden mt-10 space-x-5">
+      <Slider
+        ref={slider}
+        {...settings}
+        className="overflow-hidden mt-10 space-x-5"
+      >
         {Product.map((item, i) => (
-          <Cards item={item} key={i}/>
+          <Cards item={item} key={i} />
         ))}
       </Slider>
     </div>
